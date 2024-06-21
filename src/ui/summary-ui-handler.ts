@@ -819,9 +819,7 @@ export default class SummaryUiHandler extends UiHandler {
         statLabel.setOrigin(0.5, 0);
         statsContainer.add(statLabel);
 
-        const statValueText = stat !== Stat.HP
-          ? Utils.formatStat(this.pokemon.stats[s])
-          : `${Utils.formatStat(this.pokemon.hp, true)}/${Utils.formatStat(this.pokemon.getMaxHp(), true)}`;
+        const statValueText = Utils.formatStat(this.pokemon.ivs[s]);
 
         const statValue = addTextObject(this.scene, 120 + 88 * colIndex, 56 + 16 * rowIndex, statValueText, TextStyle.WINDOW_ALT);
         statValue.setOrigin(1, 0);
